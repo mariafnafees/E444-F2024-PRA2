@@ -1,41 +1,12 @@
-<!-- Updated user.html file using specific stylesheets-->
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flasky</title>
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+{% block title %}Hello, Maria!{% endblock %}
 
-<!-- Navbar -->
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/">Flasky</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<!-- Main content -->
-<div class="container">
-    <div class="page-header">
-        <h1>Hello, {{ name }}!</h1>
-    </div>
+{% block content %}
+<div class="container mt-5">
+    <h1>Hello, Maria!</h1>
+    <hr>
+    <p>The local date and time is {{ moment(current_time).format('LLLL') }}.</p>
+    <p>That was {{ moment(current_time).fromNow() }}.</p>
 </div>
-
-<!-- Bootstrap JS CDN -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+{% endblock %}
